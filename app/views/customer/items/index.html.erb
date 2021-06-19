@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-1">
+        </div>
+        <div class="col-xs-9">
+            <h2>商品一覧</h2><span style="font-size-20px;">(全<%= @count %>件)</span>
+            <div class="row">
+                <% @items.each do |item| %>
+                <div class="box" style="float:left;">
+                    <%= link_to customer_item_path(item.id) do %><!-- 画像クリックで詳細ページへ 
+                     <%= attachment_image_tag item, :image, size: "150x150", fallback: "no-image.jpg" %>
+                     <% end %>
+                     <p><%= item.name %></p>
+                     <p><%= item.price %></p>
+                </div>
+                <% end %>
+            </div>
+            <div> <!-- ページング機能　-->
+                <%= paginate @items %>
+            </div>
+        </div>
+    </div>
+</div>

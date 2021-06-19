@@ -13,5 +13,5 @@ class Item < ApplicationRecord
     #バリデーション
     validates :name, presence: true
     validates :introduction, presence: true
-    validates :price, prisence: true
+    validates :price, presence: true
 end
