@@ -6,14 +6,22 @@
   text-align: center;
 }
 
+.introduction-background-image {
+  background-image: image-url('cake1.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 90%;
+  height: 350px;
+  margin:0 auto;
+}
+
 .home-introduction {
   text-align: center;
   background-color: rgba( 230, 230, 230, 0.8);
-  width: 400px;
-  margin: 0 auto;
-  margin-top: auto;
+  width: 50%;
+  margin: auto;
+  margin-top: 100px;
   font-family: 'Kosugi Maru', sans-serif;
-  margin-top: 30px;
 }
 
 .recommended-products {
@@ -25,8 +33,8 @@
   background-image: image-url('cake2.jpg');
   background-size: cover;
   background-position: center;
-  width: 200px;
-  height: 100px;
+  width: 150px;
+  height: 80px;
   margin:0 auto;
 }
 
