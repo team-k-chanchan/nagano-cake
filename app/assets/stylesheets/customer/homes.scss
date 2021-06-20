@@ -1,3 +1,82 @@
 // Place all the styles related to the customer/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top {
+  text-align: center;
+}
+
+.introduction-background-image {
+  background-image: image-url('cake1.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 90%;
+  height: 350px;
+  margin:0 auto;
+}
+
+.home-introduction {
+  text-align: center;
+  background-color: rgba( 230, 230, 230, 0.8);
+  width: 50%;
+  margin: auto;
+  margin-top: 100px;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.recommended-products {
+  display: flex;
+  margin: 0 auto;
+}
+
+.top-item-1 {
+  background-image: image-url('cake2.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 150px;
+  height: 80px;
+  margin:0 auto;
+}
+
+.about {
+ text-align: center;
+
+}
+
+.about-title {
+ font-size: 100px;
+}
+
+.about-image {
+  background-image: image-url('cake1.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 1000px;
+  height: 350px;
+  margin:0 auto;
+}
+
+.sample1 {
+  font-family: 'Kosugi Maru', sans-serif;
+  margin-bottom: 50px;
+}
+
+.about-introduction {
+   background-color: rgba( 250, 250, 250, 0.9);
+   width: 1000px;
+   margin: 0 auto;
+}
+
+.about-sign-up {
+  background-color: white;
+}
+
+.recommend {
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.recommended-product-box {
+  width: 25%;
+  margin: 5px;
+}
