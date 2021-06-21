@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :admins, path: 'admin', controllers: {
     sessions:      'admin/sessions',
     passwords:     'admin/passwords',
@@ -13,13 +13,14 @@ Rails.application.routes.draw do
 
   root to: "customer/homes#top"
   get "/about" => "customer/homes#about"
-  
+
   namespace :customer do
       resources :items, only:[:index, :show, :new]
   end
 
   namespace :admin do
     resources :items, only: [:index, :new, :create, :show, :edit, :update]
+    resources :genres, only: [:index, :create, :edit, :update]
   end
- 
+
 end
