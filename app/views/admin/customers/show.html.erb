@@ -2,21 +2,46 @@
   <h2 class="page-header"><%= @customer.full_name %>さんの会員詳細</h2>
     <div class="row">
       <div class="field">
-        <p>会員ID　　<%= @customer.id %></p>
-        <p>氏名　　<%= @customer.first_name %> <%= @customer.last_name %></p>
-        <p>フリガナ　　<%= @customer.kana_first_name %> <%= @customer.kana_last_name %></p>
-        <p>郵便番号　　<%= @customer.postal_code %></p>
-        <p>住所　　<%= @customer.address %></p>
-        <p>電話番号　　<%= @customer.phone_number %></p>
-        <p>メールアドレス　　<%= @customer.email %></p>
-        <p>
-          会員ステータス
-          <% if @customer.is_deleted == false %>
-          <tb class="text-secondary">　　退会</tb>
-          <% else %>
-          <tb class="text-success">　　有効</tb>
-          <% end %>
-        </p>
+        <div class="row inline-block mb-3">
+          <div class="col-6">会員ID</div>
+          <div class="col-6"><%= @customer.id %></div>
+        </div>
+        <div class="row inline-block mb-3">
+          <div class="col-6">氏名</div>
+          <div class="col-6"><%= @customer.first_name %> <%= @customer.last_name %></div>
+        </div>
+        <div class="row inline-block mb-3">
+          <div class="col-6">フリガナ</div>
+          <div class="col-6"><%= @customer.kana_first_name %> <%= @customer.kana_last_name %></div>
+        </div>
+        <div class="row inline-block mb-3">
+          <div class="col-6">郵便番号</div>
+          <div class="col-6"><%= @customer.postal_code %></div>
+        </div>
+        <div class="row inline-block mb-3">
+          <div class="col-6">住所</div>
+          <div class="col-6"><%= @customer.address %></div>
+        </div>
+        <div class="row inline-block mb-3">
+          <div class="col-6">電話番号</div>
+          <div class="col-6"><%= @customer.phone_number %></div>
+        </div>
+        <div class="row inline-block mb-3">
+          <div class="col-6">メールアドレス</div>
+          <div class="col-6"><%= @customer.email %></div>
+        </div>
+        <div class="row inline-block mb-3">
+          <div class="col-6"></div>
+          <div class="col-6"></div>
+        </div>
+        <div class="row inline-block mb-3">
+          <div class="col-6">会員ステータス</div>
+            <% if @customer.is_deleted == true %>
+          <div class="col-6 text-secondary">退会</div>
+            <% else %>
+          <div class="col-6 text-success">有効</div>
+            <% end %>
+        </div>
       </div>
     </div>
     <div class="row inline-block">
