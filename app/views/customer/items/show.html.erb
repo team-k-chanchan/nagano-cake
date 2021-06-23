@@ -8,14 +8,18 @@
       <%= attachment_image_tag @item, :image, fallback: "no-image.jpg", size: "250x200" %>
     </div>
     <div class="col-md-6">
-      <h2><%= @item.name %></h2>
+      <h3><%= @item.name %></h3>
       <p><%= @item.introduction %></p>
-      <h2>￥<%= @item.price %>円</h2>
+      <h4>￥<%= tax_price(@item.price).to_s(:delimited) %>円(税込)</h4>
       <%= form_with model: @cart_item, url: customer_cart_items_path, local:true do |f| %>
-       <%= f.select :count, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"]], include_blank: "個数選択　　　" %>
+      <div class="row mt-5">
+       <%= f.select :count, options_for_select((1..10).to_a), include_blank: "個数選択" %>
        <%= f.hidden_field :item_id, :value => @item.id %>
+       <div class="col-md-4 ml-5">
        <%= f.submit "カートに入れる", class: "btn btn-success" %>
+       </div>
       <% end %>
+      </div>
     </div>
    </div>
   </div>
