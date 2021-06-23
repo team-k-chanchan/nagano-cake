@@ -12,8 +12,9 @@ class Customer::CartItemsController < ApplicationController
     end
     
     def create
-        @cart_item = CartItem.new(cart_item_params)
-        @update_cart_item = CartItem.find_by(item_id: @cart_item.item_id)
+         @cart_item = CartItem.new(cart_item_params)
+         @cart_item.customer_id = current_customer.id
+         @update_cart_item = CartItem.find_by(item_id: @cart_item.item_id, customer_id: @cart_item.customer_id)
       if @update_cart_item.present?
          @update_num = @update_cart_item.count += @cart_item.count
          @update_cart_item.update(count: @update_num)
