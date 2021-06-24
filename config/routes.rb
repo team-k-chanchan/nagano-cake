@@ -15,11 +15,10 @@ Rails.application.routes.draw do
   get "/about" => "customer/homes#about"
   
   namespace :customer do
-
-    resources :items, only:[:index, :show,]
+    resources :items, only:[:index, :show]
     resources :cart_items, only: [:index, :create, :update, :destroy ] do
       collection do
-      delete 'destroy_all'
+        delete 'destroy_all'
       end
     end
 
@@ -46,6 +45,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :items, only: [:index, :new, :create, :show, :edit, :update]
     resources :genres, only: [:index, :create, :edit, :update]
+    resources :customers, only: [:index, :show, :edit, :update]
   end
 
 end
