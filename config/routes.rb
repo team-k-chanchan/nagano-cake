@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   root to: "customer/homes#top"
   get "/about" => "customer/homes#about"
-
+  
   namespace :customer do
     resources :items, only:[:index, :show]
     resources :cart_items, only: [:index, :create, :update, :destroy ] do
@@ -30,6 +30,16 @@ Rails.application.routes.draw do
   	     patch "out"
   	  end
   	end
+  	
+  	resources :orders,only: [:new,:index,:show,:create] do
+      collection do
+        post 'log'
+        get 'thanx'
+      end
+    end
+    
+    resources :shipping_addresses,only: [:index,:create,:edit,:update,:destroy]
+    
   end
 
   namespace :admin do
