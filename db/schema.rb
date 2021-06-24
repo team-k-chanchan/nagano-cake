@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2021_06_23_111402) do
     t.integer "genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "sales_status", default: 0
+    t.boolean "sales_status", default: true, null: false
   end
 
   create_table "order_details", force: :cascade do |t|
