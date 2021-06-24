@@ -1,0 +1,29 @@
+require 'test_helper'
+
+class Customer::OrdersControllerTest < ActionDispatch::IntegrationTest
+  test "should get index" do
+    get customer_orders_index_url
+    assert_response :success
+  end
+
+  test "should get log" do
+    get customer_orders_log_url
+    assert_response :success
+  end
+
+  test "should get new" do
+    get customer_orders_new_url
+    assert_response :success
+  end
+
+  test "should get show" do
+    get customer_orders_show_url
+    assert_response :success
+  end
+
+  test "should get thanx" do
+    get customer_orders_thanx_url
+    assert_response :success
+  end
+
+end
