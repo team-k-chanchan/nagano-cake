@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="page-header"><%= @customer.full_name %>さんの会員詳細</h2>
+  <h2 class="page-header"><%= full_name(@customer) %>さんの会員詳細</h2>
     <div class="row">
       <div class="field">
         <div class="row inline-block mb-3">
@@ -8,11 +8,11 @@
         </div>
         <div class="row inline-block mb-3">
           <div class="col-6">氏名</div>
-          <div class="col-6"><%= @customer.first_name %> <%= @customer.last_name %></div>
+          <div class="col-6"><%= @customer.last_name %> <%= @customer.first_name %></div>
         </div>
         <div class="row inline-block mb-3">
           <div class="col-6">フリガナ</div>
-          <div class="col-6"><%= @customer.kana_first_name %> <%= @customer.kana_last_name %></div>
+          <div class="col-6"><%= @customer.kana_last_name %> <%= @customer.kana_first_name %></div>
         </div>
         <div class="row inline-block mb-3">
           <div class="col-6">郵便番号</div>
@@ -46,6 +46,6 @@
     </div>
     <div class="row inline-block">
       <div class="col"><%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn btn-success" %></div>
-      <div class="col"><%= link_to "注文履歴一覧を見る", admin_customer_path, class: "btn btn-primary" %></div>
+      <div class="col"><%= link_to "注文履歴一覧を見る", admin_orders_path(@customer), class: "btn btn-primary" %></div>
     </div>
 </div>
