@@ -16,8 +16,8 @@ class Customer::CartItemsController < ApplicationController
          @cart_item.customer_id = current_customer.id
          @update_cart_item = CartItem.find_by(item_id: @cart_item.item_id, customer_id: @cart_item.customer_id)
       if @update_cart_item.present?
-         @update_num = @update_cart_item.count += @cart_item.count
-         @update_cart_item.update(count: @update_num)
+         @update_num = @update_cart_item.quantity += @cart_item.quantity
+         @update_cart_item.update(quantity: @update_num)
          redirect_to customer_cart_items_path
       elsif @cart_item.save
          redirect_to customer_cart_items_path
@@ -42,7 +42,7 @@ class Customer::CartItemsController < ApplicationController
     private
     
     def cart_item_params
-        params.require(:cart_item).permit(:count, :item_id, :customer_id )
+        params.require(:cart_item).permit(:quantity, :item_id, :customer_id )
     end
     
 end
