@@ -4,7 +4,7 @@ class Admin::OrderDetailsController < ApplicationController
     order = order_detail.order
     if order.order_status != "入金待ち"
       order_detail.update(order_detail_params)
-      order_detail.order_order_status_auto_update
+      order_detail.order_status_auto_update
       order_detail.production_complete_auto_update
       redirect_to admin_order_path(order)
     else
