@@ -15,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          <%= @orders.each do |order| %>
+          <% @orders.each do |order| %>
             <tr>
               <td><%= link_to order.created_at.strftime("%Y年%m月%d日 %H:%M:%S"), admin_order_path(order),class:"rspecorder" %></td>
               <td><%= full_name(order.customer.id) %></td>

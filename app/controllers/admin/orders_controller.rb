@@ -1,6 +1,6 @@
 class Admin::OrdersController < ApplicationController
   def index
-    if
+    if params[:customer_id].nil?
       @orders = Order.page(params[:page]).reverse_order
     else
       @orders = Order.where(customer_id: params[:customer_id]).page(params[:page]).reverse_order
