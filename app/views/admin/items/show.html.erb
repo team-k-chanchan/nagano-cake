@@ -3,9 +3,9 @@
   <h2 class="page-header">商品詳細ページ</h2>
     <div class="row">
       <div class="item-show">
-        <%= attachment_image_tag @item, :image, :fill, 550, 400, fallback: "no-image.jpg" %>
+        <%= attachment_image_tag @item, :image, :fill, 344, 250, fallback: "no-image.jpg", size:'344x250' %>
       </div>
-      <div class="item-introduction">
+      <div class="item-introduction ml-5">
         <table class="table">
           <div class="row">
             <p class="item">商品名</p>
@@ -20,12 +20,18 @@
             <p class="item-li"><%= @item.genre.name %></p>
           </div>
           <div class="row">
-            <p class="item">税込価格</p>
+            <p class="item">税込価格(税抜価格)</p>
             <p class="item-li"><%= (@item.price * 1.1).to_i.to_s(:delimited) %>(<%= (@item.price).to_s(:delimited) %>)円</p>
           </div>
           <div class="row">
               <div class="item">販売ステータス</div>
-              <div class="item-li"><%= @item.sales_status %></div>
+              <div class="item-li">
+                 <% if @item.sales_status %>
+                  <p>販売中</p>
+                 <% else %>
+                  <p>販売停止中</p>
+                 <% end %>
+              </div>
           </div>
           <%= link_to "編集する", edit_admin_item_path(@item), class:'btn btn-success' %>
         </table>

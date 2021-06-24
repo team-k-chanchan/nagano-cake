@@ -24,7 +24,7 @@ Rails.application.routes.draw do
       end
 
     resources :items, only: [:index, :show]
-    
+
     resource :customers, only: [:show, :edit, :update] do
   		collection do
   	     get "quit"
@@ -36,6 +36,8 @@ end
   namespace :admin do
     resources :items, only: [:index, :new, :create, :show, :edit, :update]
     resources :genres, only: [:index, :create, :edit, :update]
+    resources :orders, only: [:index, :show, :update]
+    resources :order_details, only: [:update]
   end
 
 end
