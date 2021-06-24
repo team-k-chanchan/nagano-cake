@@ -7,9 +7,9 @@ module ApplicationHelper
   def tax_price(price)
     (price * 1.1).floor
   end
-
+  
   def sub_price(sub)
-    (tax_price(sub.item.price) * sub.count)
+      (tax_price(sub.item.price) * sub.quantity)
   end
 
   def total_price(totals)
