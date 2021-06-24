@@ -55,7 +55,7 @@ class Customer::OrdersController < ApplicationController
   @order_details = @order.order_details.new
   @order_details.item_id = cart_item.item.id
   @order_details.tax_included_price = cart_item.item.price
-  @order_details.quantity = cart_item.count
+  @order_details.quantity = cart_item.quantity
   @order_details.save!
   end
   
