@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 align-ceter">
+            <% if @datas.empty? %>
+            <h2>該当する商品はありません</h2>
+            <% else %>
+            <h2><%= @genres.name %>一覧</h2><span>(全<%= @count %>件)</span>
+            <% end %>
+            <div class="row mt-4 align-center">
+                <% @datas.each do |data| %>
+                <div class="col-md-3">
+                    <div class="d-flex justify-content-center">
+                     <%= link_to customer_item_path(data.id) do %><!-- 画像クリックで詳細ページへ -->
+                     <%= attachment_image_tag data, :image, size: "150x150", fallback: "no-image.jpg" %>
+                     <% end %>
+                    </div>
+                     <p class="text-center"><%= data.name %><br><%= data.price %>円(税抜)</p>
+                </div>
+                <% end %>
+            </div>
+            <div class="d-flex justify-content-center"> <!-- ページング機能　-->
+            <%= paginate @datas %>
+            </div>
+        </div>
+    </div>　
+</div>
