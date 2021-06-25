@@ -35,6 +35,11 @@ class Customer::OrdersController < ApplicationController
   @order.name        = params[:order][:name]
   @ship = "1"
   
+    unless @order.valid? == true
+      @shipping_addresses = ShippingAddress.where(customer: current_customer)
+      render :new
+    end
+  
   end
   end
   
