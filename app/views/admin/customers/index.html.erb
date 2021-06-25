@@ -13,7 +13,7 @@
       <% @all_customer.each do |customer| %>
       <tr>
         <td><%= customer.id %></td>
-        <td><%= link_to customer.full_name, admin_customer_path(customer) %></td>
+        <td><%= link_to full_name(customer), admin_customer_path(customer) %></td>
         <td><%= customer.email %></td>
         <td>
           <% if customer.is_deleted == true %>
