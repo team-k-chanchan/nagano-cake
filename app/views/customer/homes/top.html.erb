@@ -1,5 +1,5 @@
 <div class="container">
-	<div class="row">
+	<div class="row mb-5">
 		<div class="introduction-background-image">
 			<p class="home-introduction">
 				ようこそ、ながのCAKEへ！<br>
@@ -9,19 +9,18 @@
 			</p>
 		</div>
 	</div>
-	<div class="mt-5 mx-auto text-center" style="width: 80%;">
-		<h2>新着商品</h2>
-		<div class="row mt-4  align-center">
-			<% @items.each do |item| %>
-      <div class="col-3">
-      <%= link_to customer_item_path(item) do %><!-- 画像クリックで詳細ページへ -->
-      	<%= attachment_image_tag item, :image, size: "150x150", fallback: "no-image.jpg" %>
-      <% end %>
-       	<p><%= item.name %></p>
-       	<p><%= item.price %>円</p>
-      </div>
-      <% end %>
-		</div>
-		<p class="text-right"><%= link_to "全ての表品を見る >", customer_items_path %></p>
+	<h2 class="text-center mb-5">新着商品</h2>
+	<div class="row mt-4">
+		<% @items.each do |item| %>
+    <div class="col-3">
+    	<div class="d-flex justify-content-center">
+	    <%= link_to customer_item_path(item) do %><!-- 画像クリックで詳細ページへ -->
+	    	<%= attachment_image_tag item, :image, size: "150x150", fallback: "no-image.jpg" %>
+	    <% end %>
+    	</div>
+    	<p class="text-center"><%= item.name %><br><%= item.price %>円(税抜)</p>
+    </div>
+    <% end %>
 	</div>
+	<p class="text-right mt-3"><%= link_to "全ての表品を見る >", customer_items_path %></p>
 </div>

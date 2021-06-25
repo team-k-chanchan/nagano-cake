@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Customer::SessionsController < Devise::SessionsController
-  
   before_action :reject_customer, only: [:create]
 
   protected
@@ -16,7 +15,10 @@ class Customer::SessionsController < Devise::SessionsController
     end
   end
   
-  
+   # ログアウト後のページ遷移
+  def after_sign_out_path_for(resource)
+    root_path
+  end
   
   # before_action :configure_sign_in_params, only: [:create]
 
