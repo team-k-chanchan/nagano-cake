@@ -2,7 +2,7 @@
 
   <h2 class="page-header">商品一覧</h2>
   <div class="item-new">
-    <%= link_to '', new_admin_item_path,class: 'fas fa-plus nav-link text-light' %>
+    <%= link_to '商品追加', new_admin_item_path,class: 'fas fa-plus nav-link text-dark' %>
   </div>
   <%= render 'admin/items/item_list', items: @items %>
 

@@ -11,8 +11,7 @@
   background-size: cover;
   background-position: center;
   width: 90%;
-  height: 350px;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
 .home-introduction {
@@ -20,8 +19,38 @@
   background-color: rgba( 230, 230, 230, 0.8);
   width: 50%;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 250px;
+  font-size: 20px;
   font-family: 'Kosugi Maru', sans-serif;
+}
+
+.introduction-background-image-2 {
+  background-image: image-url('image-2.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.introduction-background-image-3 {
+  background-image: image-url('image-3.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.introduction-background-image-4 {
+  background-image: image-url('image-4.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 90%;
+  margin: 0 auto;
+}
+.introduction-background-image-5 {
+  background-image: image-url('image-5.jpg');
+  background-size: cover;
+  background-position: center;
+  width:  90%;
+  margin: 0 auto;
 }
 
 .about-image {
@@ -31,4 +60,9 @@
   width: 1000px;
   height: 350px;
   margin:0 auto;
+}
+
+#theTarget {
+  width: 100%;
+  height: 700px;
 }

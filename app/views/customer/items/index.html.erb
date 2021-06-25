@@ -37,10 +37,10 @@
                 <div class="col-md-3">
                     <div class="d-flex justify-content-center">
                      <%= link_to customer_item_path(item.id) do %><!-- 画像クリックで詳細ページへ -->
-                     <%= attachment_image_tag item, :image, size: "150x150", fallback: "no-image.jpg" %>
+                     <%= attachment_image_tag item, :image, size: "206x150", fallback: "no-image.jpg" %>
                      <% end %>
                     </div>
-                     <p class="text-center"><%= item.name %><br><%= item.price %>円(税抜)</p>
+                     <p class="text-center"><%= item.name %><br><%= (item.price).to_s(:delimited) %>円(税抜)</p>
                 </div>
                 <% end %>
             </div>
@@ -48,5 +48,5 @@
                 <%= paginate @items %>
             </div>
         </div>
-    </div>　
+    </div>
 </div>
