@@ -1,5 +1,4 @@
 <% provide(:title, "注文履歴一覧") %>
-<div class="container">
   <div calss="row">
     <div class="col-xs-12">
       <h2 class="head-line title_h2 text-center">注文履歴一覧</h2>
@@ -47,6 +46,8 @@
         <% else %>
           <p>注文履歴がありません。</p>
         <% end %>
+      <div class="d-flex justify-content-center">
+        <%= paginate @orders %>
+      </div>
     </div>
   </div>
-</div>

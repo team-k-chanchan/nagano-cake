@@ -72,7 +72,7 @@ class Customer::OrdersController < ApplicationController
   end
   
   def index
-  @orders = current_customer.orders
+  @orders = current_customer.orders.page(params[:page]).per(5)
   end
   
   def show

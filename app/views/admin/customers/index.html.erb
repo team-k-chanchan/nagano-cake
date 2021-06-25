@@ -1,4 +1,4 @@
-<div class="container">
+<% provide(:title, "会員一覧") %>
   <h2 class="page-header">会員一覧</h2>
   <table class="table">
     <thead class="thead-light">
@@ -29,4 +29,3 @@
   <div class="row offset-5">
     <%= paginate @customers %>
   </div>
-</div>
