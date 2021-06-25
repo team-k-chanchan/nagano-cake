@@ -22,5 +22,9 @@ class Customer < ApplicationRecord
             format: {with: /\A[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+\z/, message: "全角カタカナのみで入力して下さい"}
   validates :postal_code, length: {is: 7}, numericality: { only_integer: true }
   validates :phone_number, numericality: { only_integer: true }
-
+  
+  def active_for_authentication?
+    super && (self.is_deleted == false)
+  end
+  
 end
