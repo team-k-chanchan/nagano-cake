@@ -11,7 +11,7 @@ class Customer < ApplicationRecord
 
   #会員氏名のメソッド
   def full_name
-    first_name + last_name
+    last_name + first_name
   end
 
   #バリデーション
