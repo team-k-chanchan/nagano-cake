@@ -1,5 +1,5 @@
 class Customer::CustomersController < ApplicationController
-  before_action :authenticate_customer!, except: [:contact]
+  before_action :authenticate_customer!
   
   def show
     @customer = current_customer
@@ -34,7 +34,7 @@ class Customer::CustomersController < ApplicationController
   private
   
   def customer_params
-    params.require(:customer).permit(:last_name, :first_name, :kana_last_name, :kana_first_name, :email, :postal_code, :residence, :phone_numbar)
+    params.require(:customer).permit(:last_name, :first_name, :kana_last_name, :kana_first_name, :email, :postal_code, :address, :phone_number)
   end
   
 end
