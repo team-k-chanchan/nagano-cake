@@ -1,24 +1,35 @@
-<div class="container">
+
 	<div class="row mb-5">
-		<div class="introduction-background-image">
-			<p class="home-introduction">
-				ようこそ、ながのCAKEへ！<br>
-				このサイトは、ケーキ販売のECサイトになります。<br>
-				会員でない方も商品の閲覧はできますが、<br>
-				購入には会員登録が必要になります。<br>
-			</p>
+		<div id="theTarget">
+	  	<div class="introduction-background-image">
+	  		<div class="fadeIn">
+		  		<p class="home-introduction">
+					ようこそ、ながのCAKEへ！<br>
+					このサイトは、ケーキ販売のECサイトになります。<br>
+					会員でない方も商品の閲覧はできますが、<br>
+					購入には会員登録が必要になります。<br>
+			   </p>
+		   </div>
+		  </div>
+			<div class="introduction-background-image-2"></div>
+			<div class="introduction-background-image-3"></div>
+			<div class="introduction-background-image-4"></div>
+			<div class="introduction-background-image-5"></div>
 		</div>
 	</div>
+<div class="container">
 	<h2 class="text-center mb-5">新着商品</h2>
 	<div class="row mt-4">
 		<% @items.each do |item| %>
     <div class="col-3">
     	<div class="d-flex justify-content-center">
 	    <%= link_to customer_item_path(item) do %><!-- 画像クリックで詳細ページへ -->
-	    	<%= attachment_image_tag item, :image, size: "150x150", fallback: "no-image.jpg" %>
+	      <div class="img">
+	    	<%= attachment_image_tag item, :image, size: "206x150", fallback: "no-image.jpg" %>
+	    	</div>
 	    <% end %>
     	</div>
-    	<p class="text-center"><%= item.name %><br><%= item.price %>円(税抜)</p>
+    	<p class="text-center"><%= item.name %><br><%= (item.price).to_s(:delimited) %>円(税抜)</p>
     </div>
     <% end %>
 	</div>
