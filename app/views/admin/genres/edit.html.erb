@@ -1,7 +1,7 @@
 <% provide(:title, "ジャンル編集") %>
   <h2 class="page-header">ジャンル編集</h2>
   <div class="row">
-    <!--エラーメッセージ-->
+    <%= render "layouts/error_msg", model: @genre %>
   </div>
   <div class="row form-group offset-2">
     <div class="col">

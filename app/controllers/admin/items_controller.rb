@@ -33,7 +33,7 @@ class Admin::ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     if @item.update(params_item)
-      flash[:success] = "商品内容をを変更しました"
+      flash[:success] = "商品内容を変更しました"
       redirect_to admin_item_path(@item)
     else
       @genres = Genre.all

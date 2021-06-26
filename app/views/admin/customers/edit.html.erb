@@ -3,6 +3,7 @@
     <div class="row">
     <%= form_with(model: @customer, url:admin_customer_path, local: true ,method: :patch) do |f| %>
       <div class="row inline-block mb-3">
+        <%= render "layouts/error_msg", model: @customer %>
         <div class="col-4">会員ID</div>
         <div class="col-4"><%= @customer.id %></div>
       </div>

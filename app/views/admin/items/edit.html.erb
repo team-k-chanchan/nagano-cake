@@ -1,6 +1,6 @@
 <% provide(:title, "商品編集") %>
   <div class="row">
-    <!--エラーメッセージ-->
+    <%= render 'layouts/error_msg', model: @item %>
   </div>
   <h2 class="page-header">商品編集</h2>
   <%= render 'form', item:@item, genres:@genres %>
