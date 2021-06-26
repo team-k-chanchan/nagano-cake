@@ -27,7 +27,7 @@ $(function(){
     easing:'easeOutQuart',
     navType:'bubble',
     childremElementType:'div',
-    arrows:false,
+    arrows:true,
     autoPlay:true,
     autoPlayDuration:3000,
     keyboardOnAlways:true,
