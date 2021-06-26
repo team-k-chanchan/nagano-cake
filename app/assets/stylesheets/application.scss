@@ -61,3 +61,27 @@ div,p,h2 {
   cursor: pointer;
 	transform: scale(1.2);
 }
+
+.flash-notice {
+  color: #808080;
+  background-color: #adffad;
+  font-size: 20px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.flash-success {
+  color: #808080;
+  background-color: #adffad;
+  font-size: 20px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.flash-alert {
+  color: #808080;
+  background-color: #ffc1c1;
+  font-size: 20px;
+  line-height: 18px;
+  text-align: center;
+}

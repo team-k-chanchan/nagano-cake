@@ -16,11 +16,7 @@
   <body>
     <%= render 'layouts/header' %>
       <main>
-        <div id="flash">
-          <div class="text-center">
-            <%= render "layouts/flash" %>
-          </div>
-        </div>
+        <%= render "layouts/flash" %>
         <%= yield %>
       </main>
     <%= render 'layouts/footer' %>
