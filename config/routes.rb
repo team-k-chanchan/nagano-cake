@@ -2,8 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :admins, path: 'admin', controllers: {
     sessions:      'admin/sessions',
-    passwords:     'admin/passwords',
-    registrations: 'admin/registrations'
+    passwords:     'admin/passwords'
   }
   devise_for :customers, path: 'customer', controllers: {
     sessions:      'customer/sessions',
@@ -13,8 +12,9 @@ Rails.application.routes.draw do
 
   root to: "customer/homes#top"
   get "/about" => "customer/homes#about"
-  
+
   namespace :customer do
+    get "/search", to: "search#search"
     resources :items, only:[:index, :show]
     resources :cart_items, only: [:index, :create, :update, :destroy ] do
       collection do
@@ -30,16 +30,16 @@ Rails.application.routes.draw do
   	     patch "out"
   	  end
   	end
-  	
+
   	resources :orders,only: [:new,:index,:show,:create] do
       collection do
         post 'log'
         get 'thanx'
       end
     end
-    
+
     resources :shipping_addresses,only: [:index,:create,:edit,:update,:destroy]
-    
+
   end
 
   namespace :admin do

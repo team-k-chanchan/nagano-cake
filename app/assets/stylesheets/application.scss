@@ -17,18 +17,47 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+@font-face {
+  font-family: 'Corporate-Mincho-ver2';
+  src: url('/assets/Corporate-Mincho-ver2.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
-.pagination>li>a {          
-  border: none;     
-  color: #696969;   
+div,p,h2 {
+  font-family: 'Corporate-Mincho-ver2';
 }
 
 
-.pagination>.active>a {     
-  background: #93c9ff;   
-  border-radius: 15px;   
+.pagination>li>a {
+  border: none;
+  color: #696969;
 }
 
-.pagination>li>a:hover {        
-  border-radius: 15px;   
+
+.pagination>.active>a {
+  background: #93c9ff;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {
+  border-radius: 15px;
+}
+
+.img {
+   transition: box-shadow .5s;
+}
+
+.img :hover {
+  box-shadow: 0 12px 12px gray;
+}
+
+.float {
+  display: inline-block;
+	transition: all .3s ease 0s;
+	text-decoration: none;
+}
+.float :hover {
+  cursor: pointer;
+	transform: scale(1.2);
 }

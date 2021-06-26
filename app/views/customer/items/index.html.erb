@@ -1,4 +1,35 @@
 <div class="container">
+    <div class="col-md-12">
+        <div class="name-search">
+            <% if customer_signed_in? %>
+            <h5>商品名検索</h5>
+            <%= form_with url: customer_search_path, method: :get, local: true do |f| %>
+            <%= f.text_field 'search[value]', size: "26x4" %><br>
+            <span class="search-button col-xs-12 text-right">
+            <%= f.select 'search[how]', options_for_select({ "部分一致" => "partical", "前方一致" => "forward", "後方一致" => "backward", "完全一致" => "match" }) %>
+            <%= f.submit :"検索" %>
+            </span>
+            <% end %>
+            <% end %>
+        </div>
+        <table class="table table-bordered genre-table">
+            <thead>
+                <tr>
+                    <th>ジャンル検索</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @genres.each do |genre| %>
+                <tr>
+                    <td>
+                    <%= link_to genre.name, customer_search_path('search[value]': genre.id, 'search[how]': "match") %>
+                    <% p 'search[value]' %>
+                    </td>
+                </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
     <div class="row">
         <div class="col-md-12 align-ceter">
             <h2>商品一覧</h2><span>(全<%= @count %>件)</span>
@@ -7,10 +38,12 @@
                 <div class="col-md-3">
                     <div class="d-flex justify-content-center">
                      <%= link_to customer_item_path(item.id) do %><!-- 画像クリックで詳細ページへ -->
-                     <%= attachment_image_tag item, :image, size: "150x150", fallback: "no-image.jpg" %>
+                     <div class="img">
+                     <%= attachment_image_tag item, :image, size: "206x150", fallback: "no-image.jpg" %>
+                     </div>
                      <% end %>
                     </div>
-                     <p class="text-center"><%= item.name %><br><%= item.price %>円(税抜)</p>
+                     <p class="text-center"><%= item.name %><br><%= (item.price).to_s(:delimited) %>円(税抜)</p>
                 </div>
                 <% end %>
             </div>
@@ -18,5 +51,5 @@
                 <%= paginate @items %>
             </div>
         </div>
-    </div>　
+    </div>
 </div>
