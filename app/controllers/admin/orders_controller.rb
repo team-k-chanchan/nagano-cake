@@ -17,6 +17,7 @@ class Admin::OrdersController < ApplicationController
   def update
     order = Order.find(params[:id])
     order.update(order_params)
+    flash[:success] = "注文ステータスを変更しました"
     order.order_detail_status_auto_update
     redirect_to admin_order_path(params[:id])
   end
