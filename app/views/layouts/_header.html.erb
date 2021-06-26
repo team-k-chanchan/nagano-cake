@@ -17,25 +17,25 @@
         <div class="row">
           <% if customer_signed_in? %>
           <div class="d-flex">
-            <div><%= link_to 'My page',customer_customers_path,class: 'nav-link text-dark' %></div>
-            <div><%= link_to 'Products',customer_items_path,class: 'nav-link text-dark' %></div>
-            <div><%= link_to 'Cart',customer_cart_items_path ,class: 'nav-link text-dark' %></div>
-            <div><%= link_to 'Log out', destroy_customer_session_path, method: :delete,class: 'nav-link text-dark' %></div>
+            <div class="float"><%= link_to 'My page',customer_customers_path,class: 'nav-link text-dark' %></div>
+            <div class="float"><%= link_to 'Products',customer_items_path,class: 'nav-link text-dark' %></div>
+            <div class="float"><%= link_to 'Cart',customer_cart_items_path ,class: 'nav-link text-dark' %></div>
+            <div class="float"><%= link_to 'Log out', destroy_customer_session_path, method: :delete,class: 'nav-link text-dark' %></div>
           </div>
           <% elsif admin_signed_in? %>
           <div class="d-flex">
-            <div><%= link_to 'Products',admin_items_path,class: 'nav-link text-dark' %></div>
-            <div><%= link_to 'Customers',admin_customers_path,class: 'nav-link text-dark' %></div>
-            <div><%= link_to 'Orders',admin_orders_path,class: 'nav-link text-dark' %></div>
-            <div><%= link_to 'Genres',admin_genres_path,class: 'nav-link text-dark' %></div>
-            <div><%= link_to 'Log out',destroy_admin_session_path,method: :delete,class: 'nav-link text-dark' %></div>
+            <div class="float"><%= link_to 'Products',admin_items_path,class: 'nav-link text-dark' %></div>
+            <div class="float"><%= link_to 'Customers',admin_customers_path,class: 'nav-link text-dark' %></div>
+            <div class="float"><%= link_to 'Orders',admin_orders_path,class: 'nav-link text-dark' %></div>
+            <div class="float"><%= link_to 'Genres',admin_genres_path,class: 'nav-link text-dark' %></div>
+            <div class="float"><%= link_to 'Log out',destroy_admin_session_path,method: :delete,class: 'nav-link text-dark' %></div>
           </div>
           <% else %>
           <div class="d-flex">
-            <div><%= link_to 'About',about_path,class: 'nav-link text-dark' %></div>
-            <div><%= link_to 'Products',customer_items_path,class: 'nav-link text-dark' %></div>
-            <div><%= link_to 'Sign up', new_customer_registration_path,class: 'nav-link text-dark' %></div>
-            <div><%= link_to 'Login', new_customer_session_path ,class: 'nav-link text-dark'%></div>
+            <div class="float"><%= link_to 'About',about_path,class: 'nav-link text-dark' %></div>
+            <div class="float"><%= link_to 'Products',customer_items_path,class: 'nav-link text-dark' %></div>
+            <div class="float"><%= link_to 'Sign up', new_customer_registration_path,class: 'nav-link text-dark' %></div>
+            <div class="float"><%= link_to 'Login', new_customer_session_path ,class: 'nav-link text-dark'%></div>
           </div>
           <% end %>
         </div>
