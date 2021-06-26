@@ -19,8 +19,8 @@
 //= require turbolinks
 //= require_tree .
 
-
-$(function(){
+document.addEventListener("turbolinks:load"
+, function(){
   $("#theTarget").skippr({
     transition:'fade',
     speed:1000,
@@ -34,6 +34,7 @@ $(function(){
     hidePrevious:false
   });
 });
-$(function() {
+document.addEventListener("turbolinks:load"
+,function() {
     $(".fadeIn").hide().fadeIn(2000);
 });
