@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    attributes:
+      customer: #会員モデル
+        phone_number: 電話番号
+        first_name: 名前
+        last_name: 名字
+        kana_first_name: 名前カナ
+        kana_last_name: 名字カナ
+        postal_code: 郵便番号
+        address: 住所
+    errors:
+     messages:
+       other_than:  「--」以外を選択してください

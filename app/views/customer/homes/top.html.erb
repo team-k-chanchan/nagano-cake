@@ -1,30 +1,29 @@
-
-	<div class="row mb-5">
-		<div id="theTarget">
-	  	<div class="introduction-background-image">
-	  		<div class="fadeIn">
-		  		<p class="home-introduction">
-					ようこそ、ながのCAKEへ！<br>
-					このサイトは、ケーキ販売のECサイトになります。<br>
-					会員でない方も商品の閲覧はできますが、<br>
-					購入には会員登録が必要になります。<br>
-			   </p>
-		   </div>
-		  </div>
-			<div class="introduction-background-image-2"></div>
-			<div class="introduction-background-image-3"></div>
-			<div class="introduction-background-image-4"></div>
-			<div class="introduction-background-image-5"></div>
-		</div>
+<div class="row mb-5">
+	<div id="theTarget">
+  	<div class="introduction-background-image">
+  		<div class="fadeIn">
+	  		<div class="home-introduction">
+	  			<p>ようこそ、ながのCAKEへ！</p>
+	  			<p>このサイトは、ケーキ販売のECサイトになります。</p>
+	  			<p>会員でない方も商品の閲覧はできますが、</p>
+	  			<p>購入には会員登録が必要になります。</p>
+		   	</div>
+	   </div>
+	  </div>
+		<div class="introduction-background-image-2"></div>
+		<div class="introduction-background-image-3"></div>
+		<div class="introduction-background-image-4"></div>
+		<div class="introduction-background-image-5"></div>
 	</div>
+</div>
 <div class="container">
-	<h2 class="text-center mb-5">新着商品</h2>
+	<h2 class="text-center mb-5">New</h2>
 	<div class="row mt-4">
 		<% @items.each do |item| %>
     <div class="col-3">
     	<div class="d-flex justify-content-center">
 	    <%= link_to customer_item_path(item) do %><!-- 画像クリックで詳細ページへ -->
-	      <div class="img">
+	      <div class="img mb-2">
 	    	<%= attachment_image_tag item, :image, size: "206x150", fallback: "no-image.jpg" %>
 	    	</div>
 	    <% end %>
@@ -33,5 +32,5 @@
     </div>
     <% end %>
 	</div>
-	<p class="text-right mt-3"><%= link_to "全ての表品を見る >", customer_items_path %></p>
+	<p class="text-right mt-3"><%= link_to "All items >>", customer_items_path,class: "text-info"  %></p>
 </div>

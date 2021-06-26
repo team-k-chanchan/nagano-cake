@@ -17,6 +17,17 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+@font-face {
+  font-family: 'Corporate-Mincho-ver2';
+  src: url('/assets/Corporate-Mincho-ver2.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+div,p,h2 {
+  font-family: 'Corporate-Mincho-ver2';
+}
+
 
 .pagination>li>a {
   border: none;
