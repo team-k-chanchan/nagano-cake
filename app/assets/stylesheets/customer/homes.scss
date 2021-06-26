@@ -52,13 +52,10 @@
   margin: 0 auto;
 }
 
-.about-image {
-  background-image: image-url('cake1.jpg');
-  background-size: cover;
-  background-position: center;
-  width: 90%;
-  height: 350px;
-  margin: 0 auto;
+.img-responsive {
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
 
 .about-title {
