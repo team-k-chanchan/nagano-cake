@@ -15,7 +15,9 @@
                 <div class="col-md-3">
                     <div class="d-flex justify-content-center">
                      <%= link_to customer_item_path(data.id) do %><!-- 画像クリックで詳細ページへ -->
-                     <%= attachment_image_tag data, :image, size: "150x150", fallback: "no-image.jpg" %>
+                     <div class="img">
+                     <%= attachment_image_tag data, :image, size: "206x150", fallback: "no-image.jpg" %>
+                     </div>
                      <% end %>
                     </div>
                      <p class="text-center"><%= data.name %><br><%= data.price %>円(税抜)</p>
