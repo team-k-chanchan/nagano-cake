@@ -44,3 +44,20 @@ div,p,h2 {
   border-radius: 15px;
 }
 
+.img {
+   transition: box-shadow .5s;
+}
+
+.img :hover {
+  box-shadow: 0 12px 12px gray;
+}
+
+.float {
+  display: inline-block;
+	transition: all .3s ease 0s;
+	text-decoration: none;
+}
+.float :hover {
+  cursor: pointer;
+	transform: scale(1.2);
+}

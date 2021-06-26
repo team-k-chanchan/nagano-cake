@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 class="page-header">会員一覧</h2>
+  <h2 class="page-header mt-4">会員一覧</h2>
   <table class="table">
     <thead class="thead-light">
       <tr>
@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @all_customer.each do |customer| %>
+      <% @customers.each do |customer| %>
       <tr>
         <td><%= customer.id %></td>
         <td><%= link_to full_name(customer), admin_customer_path(customer) %></td>
