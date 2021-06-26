@@ -1,7 +1,5 @@
 <div class="container">
-  <div class="row">
-    <h2 class="page-header">注文履歴詳細</h2>
-  </div>
+  <h2 class="page-header mt-4 mb-4">注文履歴詳細</h2>
   <div class="row">
     <div class="col-12">
       <!--エラーメッセージ-->
@@ -58,9 +56,9 @@
     <% @order_details.each do |order_detail| %>
       <tr>
         <td><%= order_detail.item.name %></td>
-        <td><%= Order.tax_included_price(order_detail) %></td>
-        <td><%= order_detail.quantity %></td>
-        <td><%= Order.item_price_subtotal(order_detail) %></td>
+        <td><%= Order.tax_included_price(order_detail).to_s(:delimited) %>円</td>
+        <td><%= order_detail.quantity %>個</td>
+        <td><%= Order.item_price_subtotal(order_detail).to_s(:delimited) %>円</td>
         <%= form_with model: [:admin,order_detail], url: admin_order_detail_path(order_detail), method: :patch, local: true do |f| %>
         <td>
           <%= f.select :production_status, OrderDetail.production_statuses.keys %>
@@ -70,7 +68,7 @@
         </td>
        <% end %>
       </tr>
-      <% end %>
+      <% end %>å
   </tbody>
 </table>
 
@@ -86,11 +84,11 @@
         </tr>
         <tr>
           <th>送料</th>
-          <td><%= @order.shipping_cost %></td>
+          <td> <%= @order.shipping_cost %>円</td>
         </tr>
         <tr>
           <th>請求金額合計</th>
-          <td><%= (@order.total_payment).to_s(:delimited) %></td>
+          <td><%= (@order.total_payment).to_s(:delimited) %>円</td>
         </tr>
       </table>
     </div>

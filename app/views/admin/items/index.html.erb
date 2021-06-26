@@ -1,8 +1,7 @@
 <div class="container">
-
-  <h2 class="page-header">商品一覧</h2>
-  <div class="item-new">
-    <%= link_to '', new_admin_item_path,class: 'fas fa-plus nav-link text-light' %>
+  <h2 class="page-header mt-4 mb-4">商品一覧</h2>
+  <div class="item-new mb-3 float-right">
+    <%= link_to '商品追加', new_admin_item_path,class: 'btn btn-outline-secondary' %>
   </div>
   <%= render 'admin/items/item_list', items: @items %>
 
