@@ -1,6 +1,6 @@
 <%= form_with model: [:admin,item], local: true do |f| %>
   <div class="row form-group">
-    <%= f.label "商品画像", class:"col-3 offset-2" %>
+    <div class="col-3 offset-2"><%= f.label "商品画像" %></div>
     <%= f.attachment_field :image, class:"col-3" %>
   </div>
   <div class="row form-group">
@@ -9,11 +9,11 @@
   </div>
   <div class="row form-group">
     <%= f.label "商品説明", class:"col-3 offset-2" %>
-    <%= f.text_area :introduction, class:"col-5" %>
+    <%= f.text_area :introduction, class:"col-3" %>
   </div>
   <div class="row form-group">
-    <%= f.label "ジャンル選択", class:"col-3 offset-2" %>
-    <%= f.collection_select :genre_id, genres, :id, :name, prompt: "選択してください", class:"col-1" %>
+    <div class="col-3 offset-2"><%= f.label "ジャンル選択" %></div>
+    <%= f.collection_select :genre_id, genres, :id, :name, prompt: "選択してください", class:"col-3" %>
   </div>
   <div class="row form-group">
     <%= f.label "税抜価格", class:"col-3 offset-2" %>
