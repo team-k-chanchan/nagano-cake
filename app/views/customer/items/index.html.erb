@@ -23,6 +23,7 @@
                 <tr>
                     <td>
                     <%= link_to genre.name, customer_search_path('search[value]': genre.id, 'search[how]': "match") %>
+                    <% p 'search[value]' %>
                     </td>
                 </tr>
                 <% end %>

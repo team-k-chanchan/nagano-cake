@@ -4,7 +4,11 @@
             <% if @datas.empty? %>
             <h2>該当する商品はありません</h2>
             <% else %>
-            <h2><%= @genres.name %>一覧</h2>
+                <% unless @genre.nil? %>
+                    <h2><%= @genre.name %>一覧</h2>
+                <% else %>
+                    <h2>検索結果一覧</h2>
+                <% end %>
             <% end %>
             <div class="row mt-4 align-center">
                 <% @datas.each do |data| %>
