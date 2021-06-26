@@ -3,12 +3,13 @@ class Admin::OrderDetailsController < ApplicationController
     order_detail = OrderDetail.find(params[:id])
     order = order_detail.order
     if order.order_status != "入金待ち"
+      flash[:success] = "制作ステータスを変更しました"
       order_detail.update(order_detail_params)
       order_detail.order_status_auto_update
       order_detail.production_complete_auto_update
       redirect_to admin_order_path(order)
     else
-      flash[:order_status_error] = "注文ステータスが「入金待ち」の為、変更できません"
+      flash[:alert] = "注文ステータスが「入金待ち」の為、変更できません"
       redirect_to admin_order_path(order)
     end
 

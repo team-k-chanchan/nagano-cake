@@ -8,6 +8,7 @@ class Customer::CartItemsController < ApplicationController
     def update
         @cart_item = CartItem.find(params[:id])
         @cart_item.update(cart_item_params)
+         flash[:success] = "#{@cart_item.item.name}の数量を変更しました"
         redirect_to customer_cart_items_path
     end
     
@@ -29,12 +30,14 @@ class Customer::CartItemsController < ApplicationController
     def destroy
         @cart_item = CartItem.find(params[:id])
         @cart_item.destroy
+        flash[:alert] = "#{@cart_item.item.name}を削除しました"
         redirect_to customer_cart_items_path
     end
     
     def destroy_all
         @cart_items = current_customer.cart_items
         @cart_items.destroy_all
+        flash[:alert] = "カートの商品を全て削除しました"
         redirect_to customer_cart_items_path
     end
 
