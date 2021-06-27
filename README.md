@@ -1,7 +1,8 @@
 # ECサイト「ながのケーキ」
 DMM WebCampのチーム開発課題として作成しました。
 
-ーーーイメージ画像載せるーーーー
+![alt](http://www.mocchiblog.com/wp-content/images/2014/03/github-logo.jpg)
+
 
 
 # 設計
@@ -10,6 +11,7 @@ DMM WebCampのチーム開発課題として作成しました。
 
 ## アプリケーション詳細設計
 ーーーイメージ画像載せるーーーー
+
 
 
 # 機能
@@ -28,9 +30,11 @@ DMM WebCampのチーム開発課題として作成しました。
 6. カート内商品の注文、詳細確認
 
 
+
 # 開発環境
 - Ruby 2.6.3
 - Ruby on Rails 5.2.5
+
 
 
 # 開発者
