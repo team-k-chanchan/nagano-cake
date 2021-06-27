@@ -10,10 +10,11 @@ DMM WebCampのチーム開発課題として作成しました。
 ![ER _-1](https://user-images.githubusercontent.com/80840037/123542848-beb42a80-d786-11eb-9271-8f72c349a991.png)
 
 ## アプリケーション詳細設計
-管理者側
+- 管理者側
 
 ![アプリケーション詳細設計_チャンチャン xlsx - 管理者 19 27 28-1](https://user-images.githubusercontent.com/80840037/123542850-c1af1b00-d786-11eb-8075-37f035e67aa1.png)
-顧客側
+
+- 顧客側
 
 ![アプリケーション詳細設計_チャンチャン xlsx - 顧客-1](https://user-images.githubusercontent.com/80840037/123542852-c4117500-d786-11eb-9683-bd822cb6bf23.png)
 
@@ -34,11 +35,9 @@ DMM WebCampのチーム開発課題として作成しました。
 6. カート内商品の注文、詳細確認
 
 
-
 # 開発環境
 - Ruby 2.6.3
 - Ruby on Rails 5.2.5
-
 
 
 # 開発者
