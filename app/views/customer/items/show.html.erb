@@ -1,0 +1,30 @@
+<% provide(:title, "商品詳細") %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 text-right mb-4">
+    </div>
+  </div>
+  <div class="row mt3">
+   <div class="col-md-4 text-right">
+      <%= attachment_image_tag @item, :image, fallback: "no-image.jpg", size: "250x200" %>
+    </div>
+    <div class="col-md-6">
+      <h3><%= @item.name %></h3>
+      <p><%= @item.introduction %></p>
+      <h4>￥<%= tax_price(@item.price).to_s(:delimited) %>円(税込)</h4>
+      <%= form_with model: @cart_item, url: customer_cart_items_path, local:true do |f| %>
+      <div class="row mt-5">
+        <% if @item.sales_status == true %>
+       <%= f.select :quantity, options_for_select((1..10).to_a) %>
+       <%= f.hidden_field :item_id, :value => @item.id %>
+       <div class="col-md-4 ml-5">
+          <%= f.submit "カートに入れる", class: "btn btn-success" %>
+        <% else %>
+          <%= f.label "Soldout", class: "btn btn-danger" %>
+        <% end %>
+       </div>
+      <% end %>
+      </div>
+    </div>
+   </div>
+  </div>

@@ -1,0 +1,40 @@
+<% provide(:title, "登録情報編集") %>
+<div class="container">
+  <h2 class="head-line mt-4 mb-4">登録情報編集</h2>
+  <div>
+  <%= form_with(model:@customer, url:customer_customers_path, local: true ,method: :put) do |f| %>
+    <div class="row inline-block mb-3">
+      <div class="col-3"><%= f.label :"氏名" %></div>
+      <div class="col-3"><%= f.text_field :last_name, class: "form-control name" %></div>
+      <div class="col-3"><%= f.text_field :first_name, class: "form-control name" %></div>
+    </div>
+    <div class="row inline-block mb-3">
+      <div class="col-3"><%= f.label :"フリガナ", class: "control-label" %></div>
+      <div class="col-3"><%= f.text_field :kana_last_name, class: "form-control name" %></div>
+      <div class="col-3"><%= f.text_field :kana_first_name, class: "form-control name" %></div>
+    </div>
+    <div class="row inline-block mb-3">
+      <div class="col-3"><%= f.label :"郵便番号", class: "control-label" %></div>
+      <div class="col-3"><%= f.text_field :postal_code, class: "form-control" %></div>
+    </div>
+    <div class="row inline-block mb-3">
+      <div class="col-3"><%= f.label :"住所", class: "control-label" %></div>
+      <div class="col-6"><%= f.text_field :address, class: "form-control" %></div>
+    </div>
+    <div class="row inline-block mb-3">
+      <div class="col-3"><%= f.label :"電話番号(ハイフンなし)", class: "control-label" %></div>
+      <div class="col-3"><%= f.text_field :phone_number, class: "form-control" %></div>
+    </div>
+    <div class="row inline-block mb-3">
+      <div class="col-3"><%= f.label :"メールアドレス", class: "control-label" %></div>
+      <div class="col-3"><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %></div>
+    </div>
+    <div class="row inline-block mb-3">
+      <div class="col-3 offset-3"><%= f.submit "編集内容を保存する", class: "btn btn-success save" %></div>
+      <div class="col-3"><%= link_to '退会する', quit_customer_customers_path, class: "glyphicon glyphicon-tint btn btn-danger"%></div>
+    </div>
+  <% end %>
+  <div class="row inline-block">
+    <div class="col-3 offset-3"><%= link_to "戻る", customer_customers_path, class: "glyphicon glyphicon-home btn btn-info" %></div>
+  </div>
+</div>

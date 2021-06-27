@@ -67,3 +67,7 @@ gem 'font-awesome-sass', '~> 5.13'
 
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+
+gem 'kaminari','~> 1.2.1'
+gem 'devise'
+gem 'rails-i18n'

@@ -1,0 +1,33 @@
+<% provide(:title, "会員一覧") %>
+<div class="container">
+  <h2 class="page-header mt-4 mb-4">会員一覧</h2>
+  <table class="table table-hover orders-table">
+    <thead>
+      <tr>
+        <th>会員ID</th>
+        <th>氏名</th>
+        <th>メールアドレス</th>
+        <th>ステータス</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.id %></td>
+        <td><%= link_to full_name(customer), admin_customer_path(customer) %></td>
+        <td><%= customer.email %></td>
+        <td>
+          <% if customer.is_deleted == true %>
+          <tb class="text-secondary">退会</tb>
+          <% else %>
+          <tb class="text-success">有効</tb>
+          <% end %>
+        </tb>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="row offset-5">
+    <%= paginate @customers %>
+  </div>
+</div>
