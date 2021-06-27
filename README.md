@@ -1,8 +1,7 @@
 # ECサイト「ながのケーキ」
 DMM WebCampのチーム開発課題として作成しました。
 
-![alt](http://www.mocchiblog.com/wp-content/images/2014/03/github-logo.jpg)
-
+https://github.com/team-k-chanchan/nagano-cake/files/6721404/ER._.pdf
 
 
 # 設計
